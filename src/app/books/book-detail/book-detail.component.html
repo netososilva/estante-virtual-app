@@ -1,0 +1,22 @@
+<section class="content-header">
+    <h2>
+        <a class="action-link" [routerLink]="['/books']"><i class="fa fa-arrow-left"></i> Voltar</a>
+    </h2>
+</section>
+<section class="content">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{book?.imagePath}}" alt="{{book.name}}" class="img-responsive">
+            </div>
+            <div class="col-md-8">
+                <h3>
+                    {{book.name}} - {{book.author.name}}
+                </h3>
+                <p>
+                    {{book.description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

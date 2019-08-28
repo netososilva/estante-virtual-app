@@ -1,0 +1,26 @@
+<section class="content-header">
+    <h2>
+        <a class="action-link" [routerLink]="['/books']"><i class="fa fa-arrow-left"></i> Voltar</a>
+    </h2>
+</section>
+<section class="content">
+    <div *ngIf="books.length === 0; else booksToInsert">
+        <h3 class="text-center">
+            Você já possui todos os livros cadastros no site!
+        </h3>
+    </div>
+    <ng-template #booksToInsert>
+        <h3 class="text-center">Clique em qualquer livro para adicioná-lo a sua biblioteca!</h3>
+        <div class="row">
+            <div *ngFor="let book of books; let i = index">
+                <div class="col-md-3">
+                    <a (click)="insertBook(book)">
+                        <ev-books-to-insert [book]=book></ev-books-to-insert>
+                    </a>
+                </div>
+                <div class="clearfix" *ngIf="i > 0 && i%3 === 0"></div>
+            </div>
+        </div>
+    </ng-template>
+
+</section>
